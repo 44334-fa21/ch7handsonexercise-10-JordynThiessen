@@ -20,7 +20,7 @@ header { background-color: #636631;
          color: #cc66cc;
          text-align: right;
          padding: 0 20px;
-         border-bottom: 2px solid #000000; }		 
+         border-bottom: 2px solid #000000; }
 nav { float: left;
       width: 150px; }
 aside { float: right;
@@ -34,11 +34,11 @@ footer { font-size: .70em;
          color: #006600;
          background-color: #FFFFFF;
          padding-top: 10px;
-         clear: both; }		 
+         clear: both; }
 h1 { margin-top: 0;
      font-size: 3em;
      text-align: left;
-     text-shadow: 2px 2px 2px #000000; }	 
+     text-shadow: 2px 2px 2px #000000; }
 header a {font-size: 0.80em; }
 header a:link, header a:visited { color: #FFFFFF; }
 header a:focus, header a:hover { color: #EEEEEE; }
@@ -62,8 +62,30 @@ aside h3 { padding-bottom: 2px;
            font-size: 0.90em;
 		   color: #CC66CC; }
 .news { font-size: 0.80em;
-        margin: 10px; }		
-</style> 
+        margin: 10px; }
+
+        #flex {display: flex;
+              flex-direction: row;}
+        nav {flex: 1;}
+        main {flex: 7;}
+        aside {flex: 2;}
+        @media only screen and (max-width: 1024px) {
+                    main { margin: 0; padding: 0;}
+                    #container { width: auto; margin: 0; }
+        		    h1 { font-size: 200%; }
+        			nav li { padding: 0 0.5em;
+        				     font-size: 1.2em; 	}
+        #flex {flex-direction: column;}
+        nav ul {display: flex;
+                flex-direction: row;
+                justify-content: center;
+        }
+        }
+        @media only screen and (max-width: 768px) {
+          nav {order: 1;}
+          nav ul {flex-wrap: wrap;}
+        }
+</style>
 </head>
 <body>
 <div id="container">
@@ -71,6 +93,7 @@ aside h3 { padding-bottom: 2px;
     <span><a href="#content">Skip to Content</a></span>
     <h1>Door County Wildflowers</h1>
   </header>
+  <div id="flex">
   <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -96,9 +119,10 @@ Newport Wilderness Society</a> sponsors free meadow hikes at 9am every Saturday.
     <img src="trillium.jpg" width="200" height="150" alt="Trillium" id="floatright">
     <h3>Explore the beauty <br>of Door County Wildflowers. . . .</h3>
     <p>With five state parks, tons of county parks, and private nature sanctuaries, Door County is teeming with natural areas for you to stalk your favorite wildflowers.</p>
+  </div>
     <footer> Copyright &copy; 2018 Door County Wild Flowers<br>
     </footer>
   </main>
-</div> 
+</div>
 </body>
 </html>
